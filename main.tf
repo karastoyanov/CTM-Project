@@ -11,6 +11,7 @@ terraform {
 
 provider "digitalocean" {
     token = var.token
+    # pvt_key = var.key
 }
 
 resource "digitalocean_droplet" "terramino" {
