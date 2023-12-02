@@ -4,7 +4,7 @@ variable "token" {
     description = "API TOKEN"	
 }	
 
-variable "key" {	
+variable "pvt_key" {	
     type = string	
     default = "$HOME/.ssh/digital_ocean/id_rsa"	
     description = "Private SSH Key Location"	

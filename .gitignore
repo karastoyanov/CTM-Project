@@ -1,2 +1,4 @@
 # Ignore TF variables
 ./variables.tf
+variables.tf
+variables.tf
