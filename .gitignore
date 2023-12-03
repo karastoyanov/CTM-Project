@@ -3,7 +3,7 @@
 
 # Ignore Terraform config dir
 .terraform
-terraform.lock.hcl
+.terraform.lock.hcl
 terraform.tfstate.backup
 variables.tf
 terraform.tfstate
