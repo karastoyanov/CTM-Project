@@ -1,5 +1,5 @@
 terraform {
-#   required_version = ">= 1.0.0"
+  required_version = ">= 1.0.0"
 
   required_providers {
     digitalocean = {
@@ -11,10 +11,9 @@ terraform {
 
 provider "digitalocean" {
     token = var.token
-    # pvt_key = var.key
 }
 
-resource "digitalocean_droplet" "terramino" {
+resource "digitalocean_droplet" "Development" {
   image     = "ubuntu-22-04-x64"
   name      = "terraform-test"
   region    = "fra1"
