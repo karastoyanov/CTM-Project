@@ -1,4 +1,12 @@
 # Ignore TF variables
 ./variables.tf
 
+# Ignore Terraform config dir
+./terraform
+terraform.lock.hcl
+terraform.tfstate.backup
+
+
 variables.tf
+terraform.tfstate
+terraform.tfstate
