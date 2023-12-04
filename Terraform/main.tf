@@ -3,10 +3,15 @@ terraform {
 
   required_providers {
     digitalocean = {
-      source = "digitalocean/digitalocean"
-        version = "~> 2.0"
+      source  = "digitalocean/digitalocean"
+      version = "~> 2.0"
     }
   }
+}
+
+resource "digitalocean_ssh_key" "terraform" {
+  name = "Default Terraform SSH key"
+  public_key = file("~/.ssh/id_rsa.pub")
 }
 
 provider "digitalocean" {
