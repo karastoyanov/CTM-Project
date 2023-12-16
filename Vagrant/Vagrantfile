@@ -1,0 +1,44 @@
+load "environment.rb"
+
+Vagrant.configure('2') do |config|
+    config.vm.define "web-server-1" do |config|
+        config.vm.provider :digital_ocean do |provider, override|
+          override.ssh.private_key_path = '~/.ssh/id_rsa'
+          override.vm.box = 'digital_ocean'
+          override.vm.box_url = "https://github.com/devopsgroup-io/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+          override.nfs.functional = false
+          override.vm.allowed_synced_folder_types = :rsync
+          provider.token = $token
+          provider.image = 'debian-12-x64'
+          provider.region = 'fra1'
+          provider.size = 's-1vcpu-1gb'
+          provider.backups_enabled = false
+          provider.private_networking = false
+          provider.ipv6 = false
+          provider.monitoring = false
+        end
+        config.vm.provision "file", source: "../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
+        config.vm.provision "file", source: "troll_parts.conf", destination: "/etc/apache2/sites-available/"
+        config.vm.provision "shell", path: "wb_bootstrap.sh", privileged: true
+    end
+    config.vm.define "web-server-2" do |config|
+        config.vm.provider :digital_ocean do |provider, override|
+          override.ssh.private_key_path = '~/.ssh/id_rsa'
+          override.vm.box = 'digital_ocean'
+          override.vm.box_url = "https://github.com/devopsgroup-io/vagrant-digitalocean/raw/master/box/digital_ocean.box"
+          override.nfs.functional = false
+          override.vm.allowed_synced_folder_types = :rsync
+          provider.token = $token
+          provider.image = 'debian-12-x64'
+          provider.region = 'fra1'
+          provider.size = 's-1vcpu-1gb'
+          provider.backups_enabled = false
+          provider.private_networking = false
+          provider.ipv6 = false
+          provider.monitoring = false
+        end
+        config.vm.provision "file", source: "../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
+        config.vm.provision "file", source: "troll_parts.conf", destination: "/etc/apache2/sites-available/"
+        config.vm.provision "shell", path: "wb_bootstrap.sh", privileged: true
+    end
+  end

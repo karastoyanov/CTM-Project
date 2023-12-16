@@ -7,12 +7,12 @@ resource "digitalocean_droplet" "apache-server" {
   size     = "s-1vcpu-1gb"
   ssh_keys = [digitalocean_ssh_key.terraform.fingerprint]
 
-  connection {
-    type        = "ssh"
-    user        = "root"
-    private_key = file(var.pvt_key)
-    host        = element(digitalocean_droplet.apache-server.*.ipv4_address, count.index)
-  }
+  # connection {
+  #   type        = "ssh"
+  #   user        = "root"
+  #   private_key = file(var.pvt_key)
+  #   host        = element(digitalocean_droplet.apache-server.*.ipv4_address, count.index)
+  # }
 
   # provisioner "remote-exec" {
   #   inline = [
@@ -21,6 +21,7 @@ resource "digitalocean_droplet" "apache-server" {
   #   ]
   # }
 }
+
 
 
 # Copy the web bootstrap shell script

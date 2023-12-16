@@ -7,3 +7,6 @@
 terraform.tfstate.backup
 variables.tf
 terraform.tfstate
+
+# Vagrant environment file
+Vagrant/environment.rb
