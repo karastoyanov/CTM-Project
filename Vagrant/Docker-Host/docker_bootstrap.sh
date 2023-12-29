@@ -20,5 +20,8 @@ apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-co
 
 systemctl enable docker && systemctl start docker
 
+# Add vagrant user to docker group
+sudo usermod -a -G docker vagrant
 
+# Execute the compose file
 docker compose up -d .

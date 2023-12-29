@@ -1,0 +1,24 @@
+version: 3
+services:
+  dbeaver:
+    image: dbeaver/cloudbeaver
+    container_name: cloudbeaver
+    restart: always
+    ports:
+      - 8081:8978
+  uptime-kuma:
+    image: louislam/uptime-kuma
+    container_name: uptime-kuma
+    restart: always
+    ports:
+      - 8082:3001
+  portainer:
+    image: portainer/portainer-ce
+    container_name: portainer
+    restart: always
+    ports:
+      - 9000:9000
+    volumes:
+      - data:/data
+      - /var/run/docker.sock:/var/run/docker.sock
+      
