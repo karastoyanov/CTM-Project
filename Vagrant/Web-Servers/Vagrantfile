@@ -17,7 +17,7 @@ Vagrant.configure('2') do |config|
           provider.ipv6 = false
           provider.monitoring = false
         end
-        config.vm.provision "file", source: "../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
+        config.vm.provision "file", source: "../../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
         config.vm.provision "file", source: "troll_parts.conf", destination: "/etc/apache2/sites-available/"
         config.vm.provision "shell", path: "wb_bootstrap.sh", privileged: true
     end
@@ -37,7 +37,7 @@ Vagrant.configure('2') do |config|
           provider.ipv6 = false
           provider.monitoring = false
         end
-        config.vm.provision "file", source: "../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
+        config.vm.provision "file", source: "../../Services/CompanyWebSite/WebSiteProject/company-website", destination: "/var/www/trollparts"
         config.vm.provision "file", source: "troll_parts.conf", destination: "/etc/apache2/sites-available/"
         config.vm.provision "shell", path: "wb_bootstrap.sh", privileged: true
     end

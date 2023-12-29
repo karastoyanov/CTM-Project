@@ -1,8 +1,11 @@
 #!/bin/bash
 
+# Wait for Rsync to be installed
+sleep 30
+
 # Update the OS
 # apt update && apt upgrade -y
-sleep 30
+
 # Install Apache2
 apt install apache2 -y
 
