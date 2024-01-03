@@ -11,7 +11,7 @@ terraform {
 
 resource "digitalocean_ssh_key" "terraform" {
   name = "Default Terraform SSH key"
-  public_key = file("~/.ssh/id_rsa")
+  public_key = var.pub-key
 }
 
 provider "digitalocean" {
