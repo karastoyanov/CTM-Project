@@ -8,6 +8,7 @@ terraform.tfstate.backup
 variables.tf
 terraform.tfstate
 
-# Vagrant environment file
+# Ignore Vagrant environment files
 Vagrant/Web-Servers/environment.rb
 Vagrant/Docker-Host/environment.rb
+Vagrant/Jenkins-Server/environment.rb
