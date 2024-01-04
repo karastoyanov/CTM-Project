@@ -1,12 +1,13 @@
 # Cluster with PostgreSQL database for the customers
-resource "digitalocean_database_cluster" "cluster-jupiter" {
+resource "digitalocean_database_cluster" "cluster-jupiter-01" {
   name       = "postgres-cluster-jupiter"
   engine     = "pg"
   version    = "15"
   size       = "db-s-1vcpu-2gb"
-  region     = "fra1"
+  region     = "sfo3"
   node_count = 2
 }
+
 resource "digitalocean_database_db" "spareparts-db" {
   cluster_id = digitalocean_database_cluster.cluster-jupiter.id
   name       = "spareparts-db"
@@ -16,12 +17,16 @@ resource "digitalocean_database_firewall" "jupiter-firewall" {
   cluster_id = digitalocean_database_cluster.cluster-jupiter.id
   rule {
     type = "droplet"
-    value = "data.digitalocean_droplet.web-server-1.id"
+    value = "data.digitalocean_droplet.us-web-server-1.id"
   }
 
     rule {
     type = "droplet"
-    value = "data.digitalocean_droplet.web-server-2.id"
+    value = "data.digitalocean_droplet.us-web-server-2.id"
+  }
+    rule {
+    type = "droplet"
+    value = "data.digitalocean_droplet.us-web-server-3.id"
   }
 }
 
@@ -55,12 +60,29 @@ resource "digitalocean_database_firewall" "mars-firewall" {
   cluster_id = digitalocean_database_cluster.cluster-mars.id
   rule {
     type = "droplet"
-    value = "data.digitalocean_droplet.web-server-1.id"
+    value = "data.digitalocean_droplet.us-web-server-1.id"
   }
 
     rule {
     type = "droplet"
-    value = "data.digitalocean_droplet.web-server-2.id"
+    value = "data.digitalocean_droplet.us-web-server-2.id"
+  }
+    rule {
+    type = "droplet"
+    value = "data.digitalocean_droplet.us-web-server-3.id"
+  }
+    rule {
+    type = "droplet"
+    value = "data.digitalocean_droplet.eu-web-server-1.id"
+  }
+
+    rule {
+    type = "droplet"
+    value = "data.digitalocean_droplet.eu-web-server-2.id"
+  }
+    rule {
+    type = "droplet"
+    value = "data.digitalocean_droplet.eu-web-server-3.id"
   }
 }
 
