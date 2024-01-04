@@ -25,13 +25,15 @@ For demo purposes, a load balancer is being deployed using Terraform as IaaC. Th
 |![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.05.08.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.05.23.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.13.50.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.39.41.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.39.06.png?raw=true) |
 |---	|---	|---	|---	|---|
 
+#### Database Clusters
+Two database clusters are deployed via Terraform:
+* PostgreSQL 15 Cluster with 2 nodes to manage the spare parts catalog. For the demo deployment the cluster has 1vCPU/2GB RAM/30GB Disk. A Firewall rule is added to allow connections only via Droplets web-server-1 and web-server-2 (Web Server VMs). Additional connection pool resource with size 20 is created to ensure that the database cluster will keep high performance with multiple client connections. 
+
 #### Docker & Docker Compose
 
 #### Portainer
 
 #### Uptime Kuma
-
-#### Database Clusters
 
 #### Cloud DBeaver
 
