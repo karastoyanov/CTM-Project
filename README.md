@@ -23,7 +23,7 @@ Two VMs with Debian 12 and Apache are being deployed with Vagrant to serve as a 
 For demo purposes, a load balancer is being deployed using Terraform as IaaC. The load balancer should distributing the traffic between both web servers and helps monitoring the resource allocation.
 
 |![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.05.08.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.05.23.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.13.50.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.39.41.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.39.06.png?raw=true) |
-	|---	|---	|---	|---	|---|
+|---	|---	|---	|---	|---|
 
 #### Docker & Docker Compose
 
