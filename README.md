@@ -18,13 +18,6 @@ This project has to demonstrate the migration of the TrollParts Inc. infrastruct
 Six VMs with Debian 12 and Apache are being deployed with Vagrant to serve as a web servers for the company's web site and online store. Three of the VPSs are deployed in West US region, the other three web servers are deployed in Europe region. The website is a basic HTML/CSS web page for demo purposes. The entire deployment is fully automated with bash shell script provisioning in the Vagrantfile.
 #### Load Balancer
 For demo purposes, a load balancer is being deployed using Terraform as IaaC. The load balancer should distributing the traffic between web servers and helps monitoring the resource allocation. One Load balancer is deployed for the web servers in US and second load balancer for the VMs in EU region. 
-<<<<<<< HEAD
-=======
-
-|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2013.19.34.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.05.23.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.13.50.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2003.39.41.png?raw=true)   	|![](https://github.com/karastoyanov/CTM-Project/blob/main/PrntScreens/Step%202%20-%20Load_Balancer/Screenshot%202024-01-04%20at%2013.38.20.png?raw=true) |
-|---	|---	|---	|---	|---|
-
->>>>>>> 68ec95f17252be709b4f4047b2363e578fa78bce
 #### Database Clusters
 Two database clusters are deployed via Terraform:
 * PostgreSQL 15 Cluster with 2 nodes to manage the spare parts catalog. For the demo deployment the cluster has 1vCPU/2GB RAM/30GB Disk. A Firewall rule is added to allow connections only via the web server droplets. Additional connection pool resource with size 20 is created to ensure that the database cluster will keep high performance with multiple client connections. 
