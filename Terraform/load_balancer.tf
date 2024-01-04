@@ -23,9 +23,9 @@ data "digitalocean_droplet" "us-web-server-3" {
 }
 
 # Deploy Load Balancer for the Apache Web Servers EU region
-resource "digitalocean_loadbalancer" "web-lb" {
+resource "digitalocean_loadbalancer" "eu-web-lb" {
   count     = 1
-  name      = "lb-company-website"
+  name      = "lb-company-website-eu-region"
   region    = "fra1"
   algorithm = "least_connections" # load balancing algorithm to determine which Droplet will be accessed
 
@@ -51,10 +51,10 @@ resource "digitalocean_loadbalancer" "web-lb" {
 }
 
 # Deploy Load Balancer for the Apache Web Servers US region
-resource "digitalocean_loadbalancer" "web-lb" {
+resource "digitalocean_loadbalancer" "us-web-lb" {
   count     = 1
-  name      = "lb-company-website"
-  region    = "fra1"
+  name      = "lb-company-website-us-region"
+  region    = "sfo3"
   algorithm = "least_connections" # load balancing algorithm to determine which Droplet will be accessed
 
   # A list of rules for the Load Balancer

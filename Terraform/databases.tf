@@ -1,5 +1,5 @@
 # Cluster with PostgreSQL database for the customers
-resource "digitalocean_database_cluster" "cluster-jupiter-01" {
+resource "digitalocean_database_cluster" "cluster-jupiter" {
   name       = "postgres-cluster-jupiter"
   engine     = "pg"
   version    = "15"
