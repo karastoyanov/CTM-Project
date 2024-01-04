@@ -148,6 +148,9 @@
   },
   "active": "69dbd12304ac2de3",
   "lastOpenFiles": [
+    "Terraform/databases.tf",
+    "Terraform/database_customers.tf",
+    "Terraform/database_spareparts.tf",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.39.41.png",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.39.06.png",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.13.50.png",
@@ -158,7 +161,6 @@
     "PrntScreens/Step 1 - Apache_Web_Servers/Screenshot 2024-01-04 at 02.54.39.png",
     "PrntScreens/Step 1 - Apache_Web_Servers/Screenshot 2024-01-04 at 02.54.29.png",
     "PrntScreens/Step 1 - Apache_Web_Servers/Screenshot 2024-01-04 at 02.54.11.png",
-    "PrntScreens/Step 1 - Apache_Web_Servers/Screenshot 2024-01-04 at 02.53.43.png",
     "PrntScreens/Step 2 - Load_Balancer",
     "PrntScreens/untitled folder",
     "PrntScreens/Step 1 - Apache_Web_Servers",

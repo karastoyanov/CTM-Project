@@ -21,7 +21,9 @@ resource "digitalocean_database_firewall" "jupiter-firewall" {
 }
 
 
-# Customers Database with MongoDB database
+
+
+# MongoDB cluster for company's customers
 resource "digitalocean_database_cluster" "cluster-mars" {
   name       = "mongo-cluster-mars"
   engine     = "mongodb"
@@ -30,4 +32,10 @@ resource "digitalocean_database_cluster" "cluster-mars" {
   region     = "fra1"
   node_count = 1
 }
-  
+
+resource "digitalocean_database_db" "customers-db" {
+  cluster_id = digitalocean_database_cluster.cluster-mars.id
+  name       = "customers-db"
+}
+
+

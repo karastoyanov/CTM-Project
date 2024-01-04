@@ -1,6 +1,9 @@
 # Ignore TF variables
 ./variables.tf
 
+# Ignore Obsidian config files
+.obsidian
+
 # Ignore Terraform config dir
 .terraform
 .terraform.lock.hcl
