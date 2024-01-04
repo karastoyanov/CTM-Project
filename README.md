@@ -20,7 +20,8 @@ Two VMs with Debian 12 and Apache are being deployed with Vagrant to serve as a 
 |---	|---	|---	|---	|
 
 #### Load Balancer
-
+For demo purposes, a load balancer is being deployed
+|---	|---	|---	|---	|
 #### Docker & Docker Compose
 
 #### Portainer
