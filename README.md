@@ -4,15 +4,19 @@
 This project has to demonstrate the migration of the TrollParts Inc. infrastructure from on-premise to cloud services. The cloud provider used in the project is DigitalOcean.
 
 ### Tech Stack
-* DigitalOcean
-* Git/GitHub
-* Vagrant
-* Apache
-* Terraform
-* Docker & Docker Compose
-* Kubernetes
-* Jenkins
-* HTML/CSS/Python/Bash
+•DigitalOcean
+•Docker & Docker Compose
+•Kubernetes
+•Apache
+•HTML, CSS, Python, Bash
+•git/GitHub
+•Jenkins
+•Terraform
+•Vagrant
+•PostgreSQL/MongoDB
+•Portainer
+•Cloud Dbeaver
+•Uptime Kuma
 
 ### Architecture
 #### Web Servers
