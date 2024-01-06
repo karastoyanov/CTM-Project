@@ -6,12 +6,17 @@
 
 # Ignore Terraform config dir
 .terraform
-.terraform.lock.hcl
-terraform.tfstate.backup
-variables.tf
-terraform.tfstate
+/*/.terraform
+/*/.terraform.lock.hcl
+/*/terraform.tfstate.backup
+/*/variables.tf
+/*/terraform.tfstate
+
+# Ignore Vagrant config files
+Vagrant/*/.vagrant/
 
 # Ignore Vagrant environment files
-Vagrant/Web-Servers/environment.rb
-Vagrant/Docker-Host/environment.rb
-Vagrant/Jenkins-Server/environment.rb
+Vagrant/*/environment.rb
+# Vagrant/Docker-Host/environment.rb
+# Vagrant/Jenkins-Server/environment.rb
+# Vagrant/Dev-Station/environment.rb

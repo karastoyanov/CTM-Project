@@ -1,0 +1,414 @@
+data.digitalocean_droplet.eu-web-server-1: Reading...
+data.digitalocean_droplet.us-web-server-2: Reading...
+data.digitalocean_droplet.eu-web-server-3: Reading...
+data.digitalocean_droplet.eu-web-server-2: Reading...
+data.digitalocean_droplet.us-web-server-1: Reading...
+data.digitalocean_droplet.us-web-server-3: Reading...
+data.digitalocean_droplet.eu-web-server-3: Read complete after 0s [name=eu-web-server-3]
+data.digitalocean_droplet.us-web-server-3: Read complete after 0s [name=us-web-server-3]
+data.digitalocean_droplet.eu-web-server-1: Read complete after 0s [name=eu-web-server-1]
+data.digitalocean_droplet.us-web-server-1: Read complete after 0s [name=us-web-server-1]
+data.digitalocean_droplet.eu-web-server-2: Read complete after 1s [name=eu-web-server-2]
+data.digitalocean_droplet.us-web-server-2: Read complete after 1s [name=us-web-server-2]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # digitalocean_database_cluster.cluster-jupiter will be created
+  + resource "digitalocean_database_cluster" "cluster-jupiter" {
+      + database             = (known after apply)
+      + engine               = "pg"
+      + host                 = (known after apply)
+      + id                   = (known after apply)
+      + name                 = "postgres-cluster-jupiter"
+      + node_count           = 2
+      + password             = (sensitive value)
+      + port                 = (known after apply)
+      + private_host         = (known after apply)
+      + private_network_uuid = (known after apply)
+      + private_uri          = (sensitive value)
+      + project_id           = (known after apply)
+      + region               = "sfo3"
+      + size                 = "db-s-1vcpu-2gb"
+      + storage_size_mib     = (known after apply)
+      + uri                  = (sensitive value)
+      + urn                  = (known after apply)
+      + user                 = (known after apply)
+      + version              = "15"
+    }
+
+  # digitalocean_database_cluster.cluster-mars will be created
+  + resource "digitalocean_database_cluster" "cluster-mars" {
+      + database             = (known after apply)
+      + engine               = "mongodb"
+      + host                 = (known after apply)
+      + id                   = (known after apply)
+      + name                 = "mongo-cluster-mars"
+      + node_count           = 1
+      + password             = (sensitive value)
+      + port                 = (known after apply)
+      + private_host         = (known after apply)
+      + private_network_uuid = (known after apply)
+      + private_uri          = (sensitive value)
+      + project_id           = (known after apply)
+      + region               = "fra1"
+      + size                 = "db-s-1vcpu-2gb"
+      + storage_size_mib     = (known after apply)
+      + uri                  = (sensitive value)
+      + urn                  = (known after apply)
+      + user                 = (known after apply)
+      + version              = "5"
+    }
+
+  # digitalocean_database_connection_pool.pool-jupiter-01 will be created
+  + resource "digitalocean_database_connection_pool" "pool-jupiter-01" {
+      + cluster_id   = (known after apply)
+      + db_name      = "spareparts-db"
+      + host         = (known after apply)
+      + id           = (known after apply)
+      + mode         = "transaction"
+      + name         = "pool-jupiter-01"
+      + password     = (sensitive value)
+      + port         = (known after apply)
+      + private_host = (known after apply)
+      + private_uri  = (sensitive value)
+      + size         = 20
+      + uri          = (sensitive value)
+      + user         = "doadmin"
+    }
+
+  # digitalocean_database_db.cipher-forge-db will be created
+  + resource "digitalocean_database_db" "cipher-forge-db" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+      + name       = "cipher-forge-db"
+    }
+
+  # digitalocean_database_db.infinite-relic-db will be created
+  + resource "digitalocean_database_db" "infinite-relic-db" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+      + name       = "infinite-relic-db"
+    }
+
+  # digitalocean_database_db.nexus-db will be created
+  + resource "digitalocean_database_db" "nexus-db" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+      + name       = "nexus-db"
+    }
+
+  # digitalocean_database_db.solar-scribe-db will be created
+  + resource "digitalocean_database_db" "solar-scribe-db" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+      + name       = "solar-scribe-db"
+    }
+
+  # digitalocean_database_firewall.jupiter-firewall will be created
+  + resource "digitalocean_database_firewall" "jupiter-firewall" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.dev-station-1.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.dev-station-2.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.docker-host.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.jenkins-host.id"
+        }
+    }
+
+  # digitalocean_database_firewall.mars-firewall will be created
+  + resource "digitalocean_database_firewall" "mars-firewall" {
+      + cluster_id = (known after apply)
+      + id         = (known after apply)
+
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.dev-station-1.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.dev-station-2.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.docker-host.id"
+        }
+      + rule {
+          + created_at = (known after apply)
+          + type       = "droplet"
+          + uuid       = (known after apply)
+          + value      = "data.digitalocean_droplet.jenkins-host.id"
+        }
+    }
+
+  # digitalocean_kubernetes_cluster.nebula-orbit will be created
+  + resource "digitalocean_kubernetes_cluster" "nebula-orbit" {
+      + cluster_subnet                   = (known after apply)
+      + created_at                       = (known after apply)
+      + destroy_all_associated_resources = false
+      + endpoint                         = (known after apply)
+      + ha                               = false
+      + id                               = (known after apply)
+      + ipv4_address                     = (known after apply)
+      + kube_config                      = (sensitive value)
+      + name                             = "nebula-orbit"
+      + region                           = "sfo3"
+      + registry_integration             = false
+      + service_subnet                   = (known after apply)
+      + status                           = (known after apply)
+      + surge_upgrade                    = true
+      + updated_at                       = (known after apply)
+      + urn                              = (known after apply)
+      + version                          = "1.28.2-do.0"
+      + vpc_uuid                         = (known after apply)
+
+      + maintenance_policy {
+          + day        = "sunday"
+          + duration   = (known after apply)
+          + start_time = "04:00"
+        }
+
+      + node_pool {
+          + actual_node_count = (known after apply)
+          + auto_scale        = true
+          + id                = (known after apply)
+          + max_nodes         = 5
+          + min_nodes         = 1
+          + name              = "nebula-orbit-x001v001"
+          + nodes             = (known after apply)
+          + size              = "s-2vcpu-2gb"
+        }
+    }
+
+  # digitalocean_kubernetes_cluster.quantum-wave will be created
+  + resource "digitalocean_kubernetes_cluster" "quantum-wave" {
+      + cluster_subnet                   = (known after apply)
+      + created_at                       = (known after apply)
+      + destroy_all_associated_resources = false
+      + endpoint                         = (known after apply)
+      + ha                               = false
+      + id                               = (known after apply)
+      + ipv4_address                     = (known after apply)
+      + kube_config                      = (sensitive value)
+      + name                             = "quantum-wave"
+      + region                           = "sfo3"
+      + registry_integration             = false
+      + service_subnet                   = (known after apply)
+      + status                           = (known after apply)
+      + surge_upgrade                    = true
+      + updated_at                       = (known after apply)
+      + urn                              = (known after apply)
+      + version                          = "1.28.2-do.0"
+      + vpc_uuid                         = (known after apply)
+
+      + maintenance_policy {
+          + day        = "sunday"
+          + duration   = (known after apply)
+          + start_time = "04:00"
+        }
+
+      + node_pool {
+          + actual_node_count = (known after apply)
+          + auto_scale        = true
+          + id                = (known after apply)
+          + max_nodes         = 5
+          + min_nodes         = 1
+          + name              = "quantum-wave-x001v001"
+          + nodes             = (known after apply)
+          + size              = "s-2vcpu-2gb"
+        }
+    }
+
+  # digitalocean_kubernetes_cluster.zenith-pulse will be created
+  + resource "digitalocean_kubernetes_cluster" "zenith-pulse" {
+      + cluster_subnet                   = (known after apply)
+      + created_at                       = (known after apply)
+      + destroy_all_associated_resources = false
+      + endpoint                         = (known after apply)
+      + ha                               = false
+      + id                               = (known after apply)
+      + ipv4_address                     = (known after apply)
+      + kube_config                      = (sensitive value)
+      + name                             = "zenith-pulse"
+      + region                           = "sfo3"
+      + registry_integration             = false
+      + service_subnet                   = (known after apply)
+      + status                           = (known after apply)
+      + surge_upgrade                    = true
+      + updated_at                       = (known after apply)
+      + urn                              = (known after apply)
+      + version                          = "1.28.2-do.0"
+      + vpc_uuid                         = (known after apply)
+
+      + maintenance_policy {
+          + day        = "sunday"
+          + duration   = (known after apply)
+          + start_time = "04:00"
+        }
+
+      + node_pool {
+          + actual_node_count = (known after apply)
+          + auto_scale        = true
+          + id                = (known after apply)
+          + max_nodes         = 5
+          + min_nodes         = 1
+          + name              = "zenith-pulse-x001v001"
+          + nodes             = (known after apply)
+          + size              = "s-2vcpu-2gb"
+        }
+    }
+
+  # digitalocean_kubernetes_cluster.zenith-pulse-2 will be created
+  + resource "digitalocean_kubernetes_cluster" "zenith-pulse-2" {
+      + cluster_subnet                   = (known after apply)
+      + created_at                       = (known after apply)
+      + destroy_all_associated_resources = false
+      + endpoint                         = (known after apply)
+      + ha                               = false
+      + id                               = (known after apply)
+      + ipv4_address                     = (known after apply)
+      + kube_config                      = (sensitive value)
+      + name                             = "zenith-pulse-2"
+      + region                           = "sfo3"
+      + registry_integration             = false
+      + service_subnet                   = (known after apply)
+      + status                           = (known after apply)
+      + surge_upgrade                    = true
+      + updated_at                       = (known after apply)
+      + urn                              = (known after apply)
+      + version                          = "1.28.2-do.0"
+      + vpc_uuid                         = (known after apply)
+
+      + maintenance_policy {
+          + day        = "sunday"
+          + duration   = (known after apply)
+          + start_time = "04:00"
+        }
+
+      + node_pool {
+          + actual_node_count = (known after apply)
+          + auto_scale        = true
+          + id                = (known after apply)
+          + max_nodes         = 5
+          + min_nodes         = 1
+          + name              = "zenith-pulse-x001v002"
+          + nodes             = (known after apply)
+          + size              = "s-2vcpu-2gb"
+        }
+    }
+
+  # digitalocean_loadbalancer.eu-web-lb[0] will be created
+  + resource "digitalocean_loadbalancer" "eu-web-lb" {
+      + algorithm                        = "least_connections"
+      + disable_lets_encrypt_dns_records = false
+      + droplet_ids                      = [
+          + 394188412,
+          + 394188415,
+          + 394188416,
+        ]
+      + enable_backend_keepalive         = false
+      + enable_proxy_protocol            = false
+      + http_idle_timeout_seconds        = (known after apply)
+      + id                               = (known after apply)
+      + ip                               = (known after apply)
+      + name                             = "lb-company-website-eu-region"
+      + project_id                       = (known after apply)
+      + redirect_http_to_https           = false
+      + region                           = "fra1"
+      + size_unit                        = (known after apply)
+      + status                           = (known after apply)
+      + urn                              = (known after apply)
+      + vpc_uuid                         = (known after apply)
+
+      + forwarding_rule {
+          + certificate_id   = (known after apply)
+          + certificate_name = (known after apply)
+          + entry_port       = 80
+          + entry_protocol   = "http"
+          + target_port      = 80
+          + target_protocol  = "http"
+          + tls_passthrough  = false
+        }
+
+      + healthcheck {
+          + check_interval_seconds   = 10
+          + healthy_threshold        = 5
+          + port                     = 22
+          + protocol                 = "tcp"
+          + response_timeout_seconds = 5
+          + unhealthy_threshold      = 3
+        }
+    }
+
+  # digitalocean_loadbalancer.us-web-lb[0] will be created
+  + resource "digitalocean_loadbalancer" "us-web-lb" {
+      + algorithm                        = "least_connections"
+      + disable_lets_encrypt_dns_records = false
+      + droplet_ids                      = [
+          + 394188410,
+          + 394188413,
+          + 394188414,
+        ]
+      + enable_backend_keepalive         = false
+      + enable_proxy_protocol            = false
+      + http_idle_timeout_seconds        = (known after apply)
+      + id                               = (known after apply)
+      + ip                               = (known after apply)
+      + name                             = "lb-company-website-us-region"
+      + project_id                       = (known after apply)
+      + redirect_http_to_https           = false
+      + region                           = "sfo3"
+      + size_unit                        = (known after apply)
+      + status                           = (known after apply)
+      + urn                              = (known after apply)
+      + vpc_uuid                         = (known after apply)
+
+      + forwarding_rule {
+          + certificate_id   = (known after apply)
+          + certificate_name = (known after apply)
+          + entry_port       = 80
+          + entry_protocol   = "http"
+          + target_port      = 80
+          + target_protocol  = "http"
+          + tls_passthrough  = false
+        }
+
+      + healthcheck {
+          + check_interval_seconds   = 10
+          + healthy_threshold        = 5
+          + port                     = 22
+          + protocol                 = "tcp"
+          + response_timeout_seconds = 5
+          + unhealthy_threshold      = 3
+        }
+    }
+
+Plan: 15 to add, 0 to change, 0 to destroy.

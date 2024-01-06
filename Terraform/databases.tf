@@ -1,3 +1,20 @@
+data "digitalocean_droplet" "docker-host" {
+    name = "docker-host"
+}
+
+data "digitalocean_droplet" "jenkins-host" {
+    name = "jenkins-host"
+}
+
+data "digitalocean_droplet" "dev-station-1" {
+    name = "dev-station-1"
+}
+
+data "digitalocean_droplet" "dev-station-3" {
+    name = "dev-station-3"
+}
+
+
 # Cluster with PostgreSQL database for the customers
 resource "digitalocean_database_cluster" "cluster-jupiter" {
   name       = "postgres-cluster-jupiter"
@@ -8,25 +25,34 @@ resource "digitalocean_database_cluster" "cluster-jupiter" {
   node_count = 2
 }
 
-resource "digitalocean_database_db" "spareparts-db" {
+resource "digitalocean_database_db" "nexus-db" {
   cluster_id = digitalocean_database_cluster.cluster-jupiter.id
-  name       = "spareparts-db"
+  name       = "nexus-db"
+}
+
+resource "digitalocean_database_db" "cipher-forge-db" {
+  cluster_id = digitalocean_database_cluster.cluster-jupiter.id
+  name       = "cipher-forge-db"
 }
 
 resource "digitalocean_database_firewall" "jupiter-firewall" {
   cluster_id = digitalocean_database_cluster.cluster-jupiter.id
   rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-1.id"
+    type  = "droplet"
+    value = data.digitalocean_droplet.docker-host.id
   }
 
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-2.id"
+  rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.jenkins-host.id
   }
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-3.id"
+  rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.dev-station-1.id
+  }
+  rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.dev-station-3.id
   }
 }
 
@@ -35,7 +61,7 @@ resource "digitalocean_database_connection_pool" "pool-jupiter-01" {
   name       = "pool-jupiter-01"
   mode       = "transaction"
   size       = 20
-  db_name    = "spareparts-db"
+  db_name    = "nexus-db"
   user       = "doadmin"
 }
 
@@ -51,38 +77,33 @@ resource "digitalocean_database_cluster" "cluster-mars" {
   node_count = 1
 }
 
-resource "digitalocean_database_db" "customers-db" {
+resource "digitalocean_database_db" "solar-scribe-db" {
   cluster_id = digitalocean_database_cluster.cluster-mars.id
-  name       = "customers-db"
+  name       = "solar-scribe-db"
 }
 
+resource "digitalocean_database_db" "infinite-relic-db" {
+  cluster_id = digitalocean_database_cluster.cluster-mars.id
+  name       = "infinite-relic-db"
+}
 resource "digitalocean_database_firewall" "mars-firewall" {
   cluster_id = digitalocean_database_cluster.cluster-mars.id
+    rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.docker-host.id
+  }
+
   rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-1.id"
+    type  = "droplet"
+    value = data.digitalocean_droplet.jenkins-host.id
   }
-
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-2.id"
+  rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.dev-station-1.id
   }
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.us-web-server-3.id"
-  }
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.eu-web-server-1.id"
-  }
-
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.eu-web-server-2.id"
-  }
-    rule {
-    type = "droplet"
-    value = "data.digitalocean_droplet.eu-web-server-3.id"
+  rule {
+    type  = "droplet"
+    value = data.digitalocean_droplet.dev-station-3.id
   }
 }
 

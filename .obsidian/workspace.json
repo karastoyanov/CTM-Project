@@ -14,7 +14,7 @@
               "type": "markdown",
               "state": {
                 "file": "README.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               }
             }
@@ -148,6 +148,16 @@
   },
   "active": "69dbd12304ac2de3",
   "lastOpenFiles": [
+    "Terraform/tf_plan_output.txt",
+    "Terraform/terraform_plan_output.txt",
+    "Terraform/terraform_plan_output",
+    "Terraform/terrafom_plan_output",
+    "Vagrant/Dev-Station/app.py",
+    "Vagrant/Dev-Station/Dockerbuild",
+    "Vagrant/Dev-Station/dev_station_bootstrap.sh",
+    "Vagrant/Dev-Station/environment.rb",
+    "Vagrant/Dev-Station/Vagrantfile",
+    "Vagrant/Dev-Station",
     "Vagrant/Postman-Host",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 13.38.20.png",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 13.28.10.png",
@@ -156,17 +166,8 @@
     "PrntScreens/Step 1 - Apache_Web_Servers/Screenshot 2024-01-04 at 13.03.26.png",
     "PrntScreens/Step 3 - Database_Cluster_Postgres/Screenshot 2024-01-04 at 04.22.47.png",
     "PrntScreens/Step 3 - Database_Cluster_Postgres/Screenshot 2024-01-04 at 04.22.56.png",
-    "PrntScreens/Step 3 - Database_Cluster_Postgres",
-    "PrntScreens/untitled folder",
-    "Terraform/databases.tf",
-    "Terraform/database_customers.tf",
-    "Terraform/database_spareparts.tf",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.39.41.png",
     "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.39.06.png",
-    "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.13.50.png",
-    "PrntScreens/Step 2 - Load_Balancer",
-    "PrntScreens/Step 1 - Apache_Web_Servers",
-    "PrntScreens",
-    "untitled folder"
+    "PrntScreens/Step 2 - Load_Balancer/Screenshot 2024-01-04 at 03.13.50.png"
   ]
 }
