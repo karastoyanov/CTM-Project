@@ -15,7 +15,8 @@ data "digitalocean_droplet" "dev-station-3" {
 }
 
 
-# Cluster with PostgreSQL database for the customers
+# PostgreSQL cluster for dev purposes
+# 2 Databases with firewall and additional transaction pool
 resource "digitalocean_database_cluster" "cluster-jupiter" {
   name       = "postgres-cluster-jupiter"
   engine     = "pg"
@@ -67,7 +68,8 @@ resource "digitalocean_database_connection_pool" "pool-jupiter-01" {
 
 # ------------------------------------------------ #
 
-# MongoDB cluster for company's customers
+# MongoDB cluster for dev purposes
+# 2 Databases with firewall
 resource "digitalocean_database_cluster" "cluster-mars" {
   name       = "mongo-cluster-mars"
   engine     = "mongodb"
