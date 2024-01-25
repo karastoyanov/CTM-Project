@@ -1,4 +1,4 @@
-## Business Case - Management of Cloud Technologies
+## Business Case - Management of Cloud Infrastructures
 
 #### Get 200$ credits for 60 days on DigitalOcean
 [![DigitalOcean Referral Badge](https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg)](https://www.digitalocean.com/?refcode=a1aa4dd314f3&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge)
